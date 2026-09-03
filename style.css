@@ -213,6 +213,10 @@ body {
 
 /* Nadel */
 .vu-needle {
+    .vu-needle {
+    display: none;
+}
+
     position: absolute;
     width: 2px;
     height: 70px;
