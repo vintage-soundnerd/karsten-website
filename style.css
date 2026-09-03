@@ -279,6 +279,11 @@ body {
 }
 
 .vu-needle {
+    .vu-needle {
+    background: transparent;
+    box-shadow: none;
+}
+
     position: absolute;
     width: 3px;
     height: 120px;
