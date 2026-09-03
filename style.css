@@ -80,12 +80,6 @@ body {
 }
 
 /* Knobs */
-.knob-section {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin: 40px 0;
-}
 
 .knob {
     width: 80px;
