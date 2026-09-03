@@ -165,9 +165,10 @@ body {
 
 /* VU-Meter Gehäuse */
 .vu-meter {
-    width: 100%;
-    height: auto; /* WICHTIG: verhindert Stauchung */
+    width: 320px;     /* realistische Breite */
+    height: auto;     /* verhindert Stauchung */
     display: block;
+    margin: 0 auto;   /* zentriert */
 }
 
 
