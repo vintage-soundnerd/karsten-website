@@ -10,13 +10,13 @@ body {
     padding: 40px;
 }
 
-/* Geräte-Body: heller Hammerschlag-Silber mit Rost */
+/* Geräte-Body: helles Hammerschlag-Grau mit Rost */
 .panel {
-    width: 480px;              /* echte Gerätebreite */
+    width: 620px;                 /* echte Gerätebreite */
     margin: 40px auto;
-    padding: 30px;
+    padding: 40px;
 
-    background: #d4d4d4;       /* heller silberner Grundton */
+    background: #d6d6d6;          /* heller silber-grauer Grundton */
 
     background-image:
         url("https://i.imgur.com/0jQeQ8N.png"), /* Hammerschlag */
@@ -24,16 +24,17 @@ body {
     background-size: cover;
     background-blend-mode: multiply;
 
-    border: 8px solid #b5b5b5; /* silberner Metallrahmen */
-    border-radius: 12px;
+    border: 10px solid #bfbfbf;   /* silberner Metallrahmen */
+    border-radius: 14px;
 
     box-shadow:
-        0 0 40px rgba(0,0,0,0.7),
-        inset 0 0 20px rgba(0,0,0,0.5),
-        inset 0 0 10px rgba(255,255,255,0.3);
+        0 0 50px rgba(0,0,0,0.7),
+        inset 0 0 25px rgba(0,0,0,0.5),
+        inset 0 0 12px rgba(255,255,255,0.35);
 
     text-align: center;
 }
+
 
 
 
