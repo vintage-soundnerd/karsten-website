@@ -1,44 +1,21 @@
-/* Grundlayout */
+/* Hintergrund */
 body {
     background: #e3e3e3;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #222;
 }
 
-
-/* Mischpult-Rahmen */
+/* Seitenrahmen */
 .mixer-frame {
-    width: 820px;
+    width: 800px;
     margin: 40px auto;
     padding: 40px;
-
-    background: #d6d6d6;
-    background-image:
-        url("https://i.imgur.com/0jQeQ8N.png"),
-        url("https://i.imgur.com/8fKQ4yM.png");
-    background-size: cover;
-    background-blend-mode: multiply;
-
-    border: 14px solid #bfbfbf;
-    border-radius: 12px;
-
-    box-shadow:
-        0 0 50px rgba(0,0,0,0.7),
-        inset 0 0 25px rgba(0,0,0,0.5),
-        inset 0 0 12px rgba(255,255,255,0.35);
-}
-
-/* Schrauben */
-.screws {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.screw {
-    width: 22px;
-    height: 22px;
-    background: radial-gradient(circle, #666 0%, #222 70%);
-    border-radius: 50%;
-    box-shadow: inset 0 0 4px #000, 0 0 6px rgba(0,0,0,0.6);
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
 /* Header */
@@ -47,39 +24,39 @@ body {
     margin-bottom: 20px;
 }
 
-.panel-header h1 {
-    font-size: 32px;
-    color: #222;
-    text-shadow: 0 0 4px rgba(0,0,0,0.4);
-}
-
 .subtitle {
-    color: #444;
-    font-size: 14px;
-}
-
-/* LED */
-.led {
-    width: 18px;
-    height: 18px;
-    margin: 20px auto;
-    background: radial-gradient(circle, #ff0000 0%, #550000 70%);
-    border-radius: 50%;
-    box-shadow: 0 0 12px rgba(255,0,0,0.7);
-}
-
-/* Textbereich */
-.panel-section {
-    margin: 20px 0;
     text-align: center;
+    color: #555;
+    margin-bottom: 30px;
 }
 
-.panel-section h2 {
+/* Inhalt */
+.panel-section {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Footer */
+.panel-footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #444;
+}
+
+.impressum-link {
     color: #222;
-    margin-bottom: 10px;
+    text-decoration: none;
 }
 
-/* Knobs */
+.impressum-link:hover {
+    text-decoration: underline;
+}
+
+/* VU-Nadel entfernen */
+.vu-needle {
+    display: none !important;
+}
+
 
 .knob {
     width: 80px;
