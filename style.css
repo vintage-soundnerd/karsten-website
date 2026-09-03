@@ -6,52 +6,35 @@ body {
     padding: 40px;
 }
 
-/* Hauptpanel: Hammerschlag-Grün mit Rost */
+/* Hauptpanel: heller Hammerschlag-Silber mit Rost */
 .panel {
     max-width: 900px;
     margin: auto;
-    background:
-        radial-gradient(circle at 10% 10%, #3c5c3c 0%, #1b2b1b 40%, #101510 100%);
-    border: 6px solid #2a3a2a;
+
+    /* Heller silberner Grundton */
+    background: #d4d4d4;
+
+    /* Hammerschlag + Rost als Textur-Overlays */
+    background-image:
+        url("https://i.imgur.com/0jQeQ8N.png"), /* helle Hammerschlag-Struktur */
+        url("https://i.imgur.com/8fKQ4yM.png"); /* Rostflecken */
+    background-size: cover;
+    background-blend-mode: multiply;
+
+    /* Metallrahmen im gleichen Stil */
+    border: 6px solid #b5b5b5;
     border-radius: 14px;
+
+    /* Tiefe & Vintage-Look */
     padding: 40px;
     box-shadow:
-        0 0 40px rgba(0,0,0,0.8),
-        inset 0 0 25px rgba(0,0,0,0.7);
+        0 0 40px rgba(0, 0, 0, 0.8),
+        inset 0 0 25px rgba(0, 0, 0, 0.5),
+        inset 0 0 12px rgba(255, 255, 255, 0.35); /* heller metallischer Glanz */
+
     position: relative;
 }
 
-/* leichte Rostsprenkel */
-.panel::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-        radial-gradient(circle, rgba(120,80,40,0.35) 0, transparent 60%),
-        radial-gradient(circle, rgba(90,60,30,0.25) 0, transparent 55%);
-    mix-blend-mode: multiply;
-    opacity: 0.6;
-    pointer-events: none;
-}
-
-/* Schrauben */
-.screws {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-}
-
-.screw {
-    width: 22px;
-    height: 22px;
-    background: radial-gradient(circle, #777 0%, #333 70%);
-    border-radius: 50%;
-    position: absolute;
-    box-shadow: inset 0 0 6px #000;
-}
 
 .screw:nth-child(1) { top: 12px; left: 12px; }
 .screw:nth-child(2) { top: 12px; right: 12px; }
