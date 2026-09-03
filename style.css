@@ -21,11 +21,11 @@ body {
 
 /* Geräte-Body: helles Hammerschlag-Grau mit Rost */
 .panel {
-    width: 620px;                 /* echte Gerätebreite */
+    width: 780px;
     margin: 40px auto;
-    padding: 40px;
+    padding: 50px;
 
-    background: #d6d6d6;          /* heller silber-grauer Grundton */
+    background: #d6d6d6;
 
     background-image:
         url("https://i.imgur.com/0jQeQ8N.png"), /* Hammerschlag */
@@ -33,7 +33,7 @@ body {
     background-size: cover;
     background-blend-mode: multiply;
 
-    border: 10px solid #bfbfbf;   /* silberner Metallrahmen */
+    border: 12px solid #bfbfbf;
     border-radius: 14px;
 
     box-shadow:
@@ -44,22 +44,6 @@ body {
     text-align: center;
 }
 
-
-
-
-
-/* leichte Rostsprenkel */
-.panel::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-        radial-gradient(circle, rgba(120,80,40,0.35) 0, transparent 60%),
-        radial-gradient(circle, rgba(90,60,30,0.25) 0, transparent 55%);
-    mix-blend-mode: multiply;
-    opacity: 0.6;
-    pointer-events: none;
-}
 
 /* Schrauben */
 .screws {
