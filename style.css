@@ -116,12 +116,12 @@ body {
 .knob-panel {
     display: flex;
     justify-content: space-around;
-    margin-top: 30px;
+    margin-top: 25px;
 }
 
 .knob {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     background: radial-gradient(circle, #3a3a3a 0%, #1a1a1a 70%);
     border-radius: 50%;
     box-shadow:
@@ -131,18 +131,18 @@ body {
     position: relative;
 }
 
-/* Marker-Strich */
 .knob::after {
     content: "";
     position: absolute;
-    top: 10px;
+    top: 8px;
     left: 50%;
     width: 4px;
-    height: 20px;
+    height: 18px;
     background: #d0d0d0;
     transform: translateX(-50%);
     border-radius: 2px;
 }
+
 
 
 /* VU-Meter Wrapper */
