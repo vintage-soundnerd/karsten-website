@@ -184,10 +184,11 @@ body {
 
 /* VU-Meter Gehäuse */
 .vu-meter {
-    width: 320px;     /* realistische Breite */
-    height: auto;     /* verhindert Stauchung */
+  .vu-meter {
+    width: 340px;
+    height: auto;
     display: block;
-    margin: 0 auto;   /* zentriert */
+    margin: 0 auto;
 }
 
 
