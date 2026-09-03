@@ -6,24 +6,35 @@ body {
     padding: 40px;
 }
 
-/* Hauptpanel: Hammerschlag-Grau mit Rost */
+/* Hauptpanel: heller Hammerschlag-Silber mit Rost */
 .panel {
     max-width: 900px;
     margin: auto;
-    background: #555;
+
+    /* Heller silberner Grundton */
+    background: #c9c9c9;
+
+    /* Hammerschlag + Rost als Textur-Overlays */
     background-image:
-        url("https://i.imgur.com/0jQeQ8N.png"), /* Hammerschlag */
-        url("https://i.imgur.com/8fKQ4yM.png"); /* Rost */
+        url("https://i.imgur.com/0jQeQ8N.png"), /* helle Hammerschlag-Struktur */
+        url("https://i.imgur.com/8fKQ4yM.png"); /* Rostflecken */
     background-size: cover;
     background-blend-mode: multiply;
-    border: 6px solid #333;
+
+    /* Metallrahmen */
+    border: 6px solid #888;
     border-radius: 14px;
+
+    /* Tiefe & Vintage-Look */
     padding: 40px;
     box-shadow:
         0 0 40px rgba(0, 0, 0, 0.8),
-        inset 0 0 25px rgba(0, 0, 0, 0.7);
+        inset 0 0 25px rgba(0, 0, 0, 0.6),
+        inset 0 0 10px rgba(255, 255, 255, 0.3); /* leichter metallischer Glanz */
+
     position: relative;
 }
+
 
 
 /* leichte Rostsprenkel */
