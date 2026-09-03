@@ -1,6 +1,14 @@
-h1, h2, h3, header, .site-header {
+.site-header,
+header,
+h1,
+h2,
+h3,
+footer,
+.page-header,
+nav {
     display: none !important;
 }
+
 
 
 body {
