@@ -6,35 +6,31 @@ body {
     padding: 40px;
 }
 
-/* Hauptpanel: heller Hammerschlag-Silber mit Rost */
+/* Geräte-Body: heller Hammerschlag-Silber mit Rost */
 .panel {
-    max-width: 900px;
-    margin: auto;
+    width: 480px;              /* echte Gerätebreite */
+    margin: 40px auto;
+    padding: 30px;
 
-  /* Hauptpanel: heller Hammerschlag-Silber mit Rost */
-.panel {
-    max-width: 900px;
-    margin: auto;
-
-    background: #d4d4d4; /* heller silberner Grundton */
+    background: #d4d4d4;       /* heller silberner Grundton */
 
     background-image:
-        url("https://i.imgur.com/0jQeQ8N.png"), /* helle Hammerschlag-Struktur */
-        url("https://i.imgur.com/8fKQ4yM.png"); /* Rostflecken */
+        url("https://i.imgur.com/0jQeQ8N.png"), /* Hammerschlag */
+        url("https://i.imgur.com/8fKQ4yM.png"); /* Rost */
     background-size: cover;
     background-blend-mode: multiply;
 
-    border: 6px solid #b5b5b5; /* silberner Metallrahmen */
-    border-radius: 14px;
+    border: 8px solid #b5b5b5; /* silberner Metallrahmen */
+    border-radius: 12px;
 
-    padding: 40px;
     box-shadow:
-        0 0 40px rgba(0, 0, 0, 0.8),
-        inset 0 0 25px rgba(0, 0, 0, 0.5),
-        inset 0 0 12px rgba(255, 255, 255, 0.35);
+        0 0 40px rgba(0,0,0,0.7),
+        inset 0 0 20px rgba(0,0,0,0.5),
+        inset 0 0 10px rgba(255,255,255,0.3);
 
-    position: relative;
+    text-align: center;
 }
+
 
 
 /* leichte Rostsprenkel */
