@@ -1,3 +1,7 @@
+h1, h2, h3, header, .site-header {
+    display: none !important;
+}
+
 body {
     background: #050805;
     color: #e6e6e6;
