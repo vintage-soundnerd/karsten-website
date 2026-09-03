@@ -235,3 +235,26 @@ body {
     width: 340px;
     margin: 0 auto;
 }
+.vu-wrapper {
+    position: relative;
+    width: 340px;
+    margin: 0 auto;
+}
+
+.vu-needle {
+    position: absolute;
+    width: 3px;
+    height: 120px;
+    background: #e0e0e0;
+    top: 42px;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: rotate(-18deg);
+    border-radius: 2px;
+    animation: vuSwing 0.55s ease-in-out infinite alternate;
+}
+
+@keyframes vuSwing {
+    from { transform: rotate(-18deg); }
+    to   { transform: rotate(4deg); }
+}
