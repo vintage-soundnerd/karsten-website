@@ -45,9 +45,30 @@ body {
 .screw:nth-child(4) { bottom: 12px; right: 12px; }
 
 /* Header */
-.panel-header {
-    text-align: center;
-    margin-bottom: 30px;
+.panel {
+    max-width: 900px;
+    margin: auto;
+
+    /* Grundfarbe: helles Hammerschlag-Silber */
+    background: #d4d4d4;
+
+    /* Textur: Hammerschlag + Rost */
+    background-image:
+        url("https://i.imgur.com/0jQeQ8N.png"), /* Hammerschlag */
+        url("https://i.imgur.com/8fKQ4yM.png"); /* Rost */
+    background-size: cover;
+    background-blend-mode: multiply;
+
+    /* Metallrahmen */
+    border: 6px solid #b5b5b5;
+    border-radius: 14px;
+
+    /* Tiefe */
+    padding: 40px;
+    box-shadow:
+        0 0 40px rgba(0, 0, 0, 0.8),
+        inset 0 0 25px rgba(0, 0, 0, 0.5),
+        inset 0 0 12px rgba(255, 255, 255, 0.35);
 }
 
 .panel-header h1 {
