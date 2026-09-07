@@ -275,3 +275,17 @@ footer {
 .screw-tr { top: 15px; right: 15px; }
 .screw-bl { bottom: 15px; left: 15px; }
 .screw-br { bottom: 15px; right: 15px; }
+.knob {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: relative;
+
+    background: radial-gradient(circle at 30% 30%, #2a2a2a, #0e0e0e 70%);
+    box-shadow:
+        inset 0 0 12px rgba(255,255,255,0.15),
+        inset 0 0 6px rgba(0,0,0,0.9),
+        0 0 18px rgba(0,0,0,0.7);
+
+    filter: drop-shadow(0 0 4px rgba(0,0,0,0.6));
+}
