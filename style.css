@@ -53,25 +53,3 @@ footer {
 .impressum-link:hover {
     text-decoration: underline;
 }
-/* --- Vintage Panel --- */
-.vintage-panel {
-    background: #f3e9d2; /* warmes VU-Beige */
-    border: 3px solid #5a4a3b; /* dunkler Rahmen wie beim VU */
-    border-radius: 8px;
-
-    padding: 25px;
-    margin: 40px 0;
-
-    box-shadow:
-        inset 0 0 8px rgba(0,0,0,0.25),
-        0 0 12px rgba(0,0,0,0.25);
-}
-
-.panel-title {
-    margin-top: 0;
-    text-align: center;
-    color: #4a3b2a;
-    font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
