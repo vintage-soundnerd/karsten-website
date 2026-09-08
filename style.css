@@ -368,3 +368,59 @@ footer {
     border: 3px solid #2a0a0a;
 }
 
+/* --- Chickenhead-Knopf --- */
+.chickenhead-knob {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    margin: 0 auto;
+
+    /* Tropfenform */
+    clip-path: polygon(
+        50% 0%,
+        65% 20%,
+        80% 50%,
+        65% 80%,
+        50% 100%,
+        35% 80%,
+        20% 50%,
+        35% 20%
+    );
+
+    background: radial-gradient(circle at 50% 30%, #7a1f1f 0%, #3a0a0a 70%);
+    border: 3px solid #2a0a0a;
+
+    box-shadow:
+        inset 0 0 6px rgba(255,255,255,0.2),
+        inset 0 -10px 14px rgba(0,0,0,0.7),
+        0 0 12px rgba(0,0,0,0.6);
+}
+
+/* Lichtreflex */
+.chickenhead-knob::before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 25px;
+    background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%);
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+/* Pointer-Nase */
+.chickenhead-pointer {
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 35px;
+    background: #f2f2f2;
+    border-radius: 3px;
+    box-shadow:
+        0 0 4px rgba(255,255,255,0.6),
+        inset 0 0 2px rgba(0,0,0,0.7);
+}
