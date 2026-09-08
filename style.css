@@ -502,3 +502,12 @@ footer {
         20px 0 0 #e8e8e8,
         40px 0 0 #e8e8e8;
 }
+.knob-base {
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, #1a1a1a 0%, #000 80%);
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
