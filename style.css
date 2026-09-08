@@ -579,3 +579,12 @@ footer {
     margin: 0 auto;
     margin-top: 150px;
 }
+.scale-tick {
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background: #000;
+    left: 50%;
+    top: 0;
+    transform-origin: bottom center;
+}
