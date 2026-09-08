@@ -323,11 +323,6 @@ footer {
         0 0 4px rgba(255,255,255,0.6),
         inset 0 0 2px rgba(0,0,0,0.7);
 }
-/* --- 50er Style Kegelknopf in gedecktem Rot --- */
-.red-knob {
-    width: 120px;
-    height: 120px;
-    position: relative;
 
     /* Kegel-Form: oben heller, unten dunkler */
     background: radial-gradient(circle at 50% 30%, #7a1f1f 0%, #4a0f0f 70%);
