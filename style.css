@@ -1,595 +1,1062 @@
-/* --- Grundlayout --- */
+/* =========================================================
+   VINTAGE SOUNDNERD
+   Realistic Vintage Studio Equipment
+   ========================================================= */
+
+
+/* =========================================================
+   1. GRUNDLAYOUT
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background: #e3e3e3;   /* hellgrau */
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    color: #222;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #46413a 0%,
+            #292722 45%,
+            #171614 100%
+        );
+
+    color: #29251f;
+
+    font-family:
+        "Arial Narrow",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    min-height: 100vh;
 }
 
-/* --- Seitencontainer --- */
+
+/* leichte Körnung über dem Hintergrund */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.12;
+
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,0.04) 0px,
+            rgba(255,255,255,0.04) 1px,
+            transparent 1px,
+            transparent 3px
+        );
+
+    z-index: 100;
+}
+
+
+/* =========================================================
+   2. SEITENCONTAINER
+   ========================================================= */
+
 .page-wrapper {
-    width: 800px;
-    margin: 40px auto;
-    padding: 40px;
+    width: min(1100px, calc(100% - 30px));
 
-    background: #ffffff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    margin: 35px auto 50px;
 
-    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d8d0bd,
+            #bdb4a0 50%,
+            #d1c8b4
+        );
+
+    border: 2px solid #181714;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.65),
+        inset 0 0 0 3px #736b5b,
+        inset 0 0 25px rgba(0,0,0,0.28);
+
+    position: relative;
 }
 
-/* --- Header --- */
-h1 {
+
+/* =========================================================
+   3. HEADER
+   ========================================================= */
+
+.site-header {
+    margin-bottom: 35px;
+}
+
+.brand-plate {
     text-align: center;
-    margin-bottom: 10px;
+
+    padding: 25px 20px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #292824,
+            #171715
+        );
+
+    border: 3px solid #0c0c0b;
+
+    box-shadow:
+        inset 0 0 0 2px #555044,
+        inset 0 0 20px rgba(0,0,0,0.8),
+        0 8px 15px rgba(0,0,0,0.35);
+
+    color: #d6c9a9;
 }
 
-.subtitle {
+.brand-small {
+    display: block;
+
+    font-size: 11px;
+    letter-spacing: 5px;
+
+    color: #9d937d;
+
+    margin-bottom: 5px;
+}
+
+.brand-plate h1 {
+    margin: 0;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(32px, 6vw, 58px);
+
+    font-weight: normal;
+
+    letter-spacing: 2px;
+
+    color: #ddd1b4;
+
+    text-shadow:
+        0 2px 1px #000;
+}
+
+.brand-subtitle {
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #8e8777;
+}
+
+
+/* =========================================================
+   4. REDD CONSOLE
+   ========================================================= */
+
+.console-panel {
+    position: relative;
+
+    padding: 35px 35px 25px;
+
+    background-color: #3d5a3d;
+
+    background-image:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(255,255,255,0.10) 0,
+            transparent 20%
+        ),
+        radial-gradient(
+            circle at 70% 20%,
+            rgba(0,0,0,0.14) 0,
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 40% 80%,
+            rgba(255,255,255,0.07) 0,
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.04),
+            rgba(0,0,0,0.10)
+        );
+
+    border: 6px solid #252c23;
+
+    box-shadow:
+        inset 0 0 0 2px #71806a,
+        inset 0 0 25px rgba(0,0,0,0.6),
+        0 15px 25px rgba(0,0,0,0.45);
+}
+
+
+/* =========================================================
+   5. SCHRAUBEN
+   ========================================================= */
+
+.screw,
+.panel-screw {
+    width: 25px;
+    height: 25px;
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 32% 28%,
+            #b7ad97 0%,
+            #746d5d 25%,
+            #403c34 55%,
+            #1b1a17 100%
+        );
+
+    border: 1px solid #161513;
+
+    box-shadow:
+        inset 2px 2px 3px rgba(255,255,255,0.3),
+        inset -3px -3px 4px rgba(0,0,0,0.8),
+        0 2px 3px rgba(0,0,0,0.6);
+}
+
+.screw::after,
+.panel-screw::after {
+    content: "";
+
+    position: absolute;
+
+    width: 13px;
+    height: 3px;
+
+    top: 10px;
+    left: 5px;
+
+    background: #1b1a17;
+
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.15);
+}
+
+.screw-top-left {
+    top: 14px;
+    left: 14px;
+}
+
+.screw-top-right {
+    top: 14px;
+    right: 14px;
+}
+
+.screw-bottom-left {
+    bottom: 14px;
+    left: 14px;
+}
+
+.screw-bottom-right {
+    bottom: 14px;
+    right: 14px;
+}
+
+
+/* =========================================================
+   6. CONSOLE HEADER
+   ========================================================= */
+
+.console-header {
     text-align: center;
-    color: #555;
-    margin-bottom: 30px;
+
+    color: #d6d7c9;
+
+    padding-bottom: 25px;
+
+    border-bottom:
+        1px solid rgba(0,0,0,0.65);
+
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.08);
 }
 
-/* --- Inhalt --- */
-.content {
-    font-size: 16px;
-    line-height: 1.6;
+.console-label {
+    display: block;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #aeb7a5;
 }
 
-/* --- Footer --- */
-footer {
+.console-header h2 {
+    margin: 8px 0;
+
+    font-family: Georgia, serif;
+
+    font-weight: normal;
+
+    font-size: clamp(22px, 4vw, 34px);
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 2px 2px #182018;
+}
+
+.serial-number {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #879080;
+}
+
+
+/* =========================================================
+   7. CONSOLE CONTROLS
+   ========================================================= */
+
+.console-controls {
+    display: grid;
+
+    grid-template-columns:
+        minmax(180px, 1fr)
+        minmax(260px, 1.5fr)
+        minmax(180px, 1fr);
+
+    gap: 25px;
+
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+
+/* Kanal */
+
+.channel-strip {
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.12),
+            rgba(255,255,255,0.04),
+            rgba(0,0,0,0.12)
+        );
+
+    border-left: 1px solid rgba(0,0,0,0.3);
+    border-right: 1px solid rgba(255,255,255,0.06);
+}
+
+.channel-number {
+    position: absolute;
+
+    top: 8px;
+
+    font-family: Georgia, serif;
+
+    font-size: 13px;
+
+    color: #aeb8a5;
+
+    letter-spacing: 2px;
+}
+
+.control-group {
     text-align: center;
-    margin-top: 40px;
-    color: #444;
+}
+
+.control-label {
+    display: block;
+
+    margin-top: 15px;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #c9ccb9;
+}
+
+
+/* =========================================================
+   8. CHICKENHEAD KNOB
+   ========================================================= */
+
+.knob-container {
+    width: 180px;
+    height: 180px;
+
+    position: relative;
+
+    margin: auto;
+}
+
+
+/* Skala */
+
+.knob-scale {
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+}
+
+.scale-mark {
+    position: absolute;
+
+    left: 50%;
+    top: 8px;
+
+    width: 3px;
+    height: 13px;
+
+    transform-origin:
+        50% 82px;
+
+    background: #d8d5c5;
+
+    box-shadow:
+        0 0 2px rgba(0,0,0,0.8);
+}
+
+.mark-1 {
+    transform: translateX(-50%) rotate(-60deg);
+}
+
+.mark-2 {
+    transform: translateX(-50%) rotate(-40deg);
+}
+
+.mark-3 {
+    transform: translateX(-50%) rotate(-20deg);
+}
+
+.mark-4 {
+    transform: translateX(-50%) rotate(0deg);
+}
+
+.mark-5 {
+    transform: translateX(-50%) rotate(20deg);
+}
+
+.mark-6 {
+    transform: translateX(-50%) rotate(40deg);
+}
+
+.mark-7 {
+    transform: translateX(-50%) rotate(60deg);
+}
+
+
+/* schwarzer Knopf-Sockel */
+
+.knob-base {
+    position: absolute;
+
+    width: 145px;
+    height: 145px;
+
+    top: 18px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #3b3b38,
+            #151514 55%,
+            #050505 100%
+        );
+
+    border: 3px solid #0b0b0a;
+
+    box-shadow:
+        inset 4px 4px 8px rgba(255,255,255,0.10),
+        inset -7px -8px 12px rgba(0,0,0,0.9),
+        0 5px 10px rgba(0,0,0,0.7);
+}
+
+
+/* roter Chickenhead */
+
+.chickenhead-knob {
+    position: absolute;
+
+    width: 112px;
+    height: 112px;
+
+    top: 12px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            115deg,
+            #a73c32 0%,
+            #79241f 30%,
+            #481310 70%,
+            #260a08 100%
+        );
+
+    clip-path:
+        polygon(
+            50% 0%,
+            66% 18%,
+            78% 42%,
+            88% 70%,
+            72% 88%,
+            50% 100%,
+            28% 88%,
+            12% 70%,
+            22% 42%,
+            34% 18%
+        );
+
+    filter:
+        drop-shadow(
+            0 4px 4px rgba(0,0,0,0.8)
+        );
+}
+
+
+/* Lichtreflex */
+
+.chickenhead-knob::before {
+    content: "";
+
+    position: absolute;
+
+    width: 45px;
+    height: 18px;
+
+    top: 14px;
+    left: 34px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,255,255,0.32),
+            transparent 70%
+        );
+}
+
+
+/* Pointer */
+
+.chickenhead-pointer {
+    position: absolute;
+
+    width: 7px;
+    height: 38px;
+
+    top: 5px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #aaa69a,
+            #fff,
+            #aaa69a
+        );
+
+    box-shadow:
+        0 0 3px rgba(255,255,255,0.7),
+        0 2px 2px rgba(0,0,0,0.7);
+}
+
+
+/* =========================================================
+   9. VU METER
+   ========================================================= */
+
+.meter-section {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* Metallrahmen */
+
+.meter-frame {
+    position: relative;
+
+    width: min(100%, 390px);
+
+    padding: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #b9b3a4,
+            #5f5b51 45%,
+            #a8a193
+        );
+
+    border: 4px solid #25231f;
+
+    box-shadow:
+        inset 0 0 0 2px #d2ccbb,
+        inset 0 0 15px rgba(0,0,0,0.6),
+        0 8px 12px rgba(0,0,0,0.65);
+}
+
+.meter-brand {
+    text-align: center;
+
+    margin-bottom: 8px;
+
+    font-family: Georgia, serif;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #302d27;
+}
+
+.vu-meter {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border: 3px solid #25231f;
+
+    background: #151515;
+
+    box-shadow:
+        inset 0 0 10px #000;
+}
+
+.meter-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 8px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #292720;
+}
+
+
+/* =========================================================
+   10. FADER
+   ========================================================= */
+
+.fader {
+    width: 120px;
+    height: 260px;
+
+    position: relative;
+
+    margin: auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.16),
+            rgba(255,255,255,0.04),
+            rgba(0,0,0,0.16)
+        );
+}
+
+
+/* Skala */
+
+.fader-scale {
+    position: absolute;
+
+    left: 0;
+    top: 5px;
+
+    height: 250px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 10px;
+
+    color: #c5c8b8;
+}
+
+
+/* Schiene */
+
+.fader-track {
+    position: absolute;
+
+    width: 7px;
+    height: 245px;
+
+    top: 7px;
+    left: 70px;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #111,
+            #666,
+            #111
+        );
+
+    box-shadow:
+        inset 0 0 3px #000,
+        0 0 2px #000;
+}
+
+
+/* Faderknopf */
+
+.fader-knob {
+    position: absolute;
+
+    width: 48px;
+    height: 27px;
+
+    left: 49px;
+    top: 93px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #bdb9aa,
+            #6c685d 45%,
+            #3e3b35
+        );
+
+    border: 2px solid #25231f;
+
+    box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.45),
+        0 3px 5px rgba(0,0,0,0.75);
+}
+
+.fader-knob span {
+    display: block;
+
+    width: 30px;
+    height: 3px;
+
+    margin: 10px auto;
+
+    background: #222;
+
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.2);
+}
+
+
+/* =========================================================
+   11. CONSOLE FOOTER
+   ========================================================= */
+
+.console-footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 15px 10px 5px;
+
+    border-top:
+        1px solid rgba(0,0,0,0.65);
+
+    color: #9fa895;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+/* Kontrolllampen */
+
+.pilot-lights {
+    display: flex;
+
+    gap: 10px;
+}
+
+.pilot {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 7px currentColor,
+        inset 0 1px 2px rgba(255,255,255,0.7);
+}
+
+.pilot.red {
+    background: #d52c21;
+    color: #d52c21;
+}
+
+.pilot.amber {
+    background: #d99b28;
+    color: #d99b28;
+}
+
+.pilot.green {
+    background: #65a94d;
+    color: #65a94d;
+}
+
+
+/* =========================================================
+   12. CONTENT PANEL
+   ========================================================= */
+
+.content-panel {
+    position: relative;
+
+    margin-top: 35px;
+
+    padding: 35px 40px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e4dcc9,
+            #cfc5af
+        );
+
+    border: 3px solid #4b463b;
+
+    box-shadow:
+        inset 0 0 15px rgba(0,0,0,0.25),
+        0 8px 15px rgba(0,0,0,0.25);
+}
+
+.content-panel h2 {
+    margin-top: 8px;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(25px, 4vw, 38px);
+
+    font-weight: normal;
+
+    color: #302b23;
+}
+
+.content-panel p {
+    max-width: 800px;
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+
+    line-height: 1.75;
+
+    color: #403a30;
+}
+
+.section-label {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #766d5b;
+}
+
+
+/* =========================================================
+   13. FOOTER
+   ========================================================= */
+
+.site-footer {
+    text-align: center;
+
+    padding: 35px 10px 10px;
+
+    color: #5e5749;
+}
+
+.footer-line {
+    height: 2px;
+
+    margin-bottom: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #665f50,
+            transparent
+        );
+}
+
+.site-footer p {
+    margin: 5px;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+.footer-credit {
+    color: #817866;
 }
 
 .impressum-link {
-    color: #222;
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: #403a31;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
     text-decoration: none;
+
+    border-bottom: 1px solid transparent;
 }
 
 .impressum-link:hover {
-    text-decoration: underline;
-}
-/* --- Vintage Panel --- */
-.vintage-panel {
-    background: #f3e9d2; /* warmes VU-Beige */
-    border: 3px solid #5a4a3b; /* dunkler Rahmen wie beim VU */
-    border-radius: 8px;
-
-    padding: 25px;
-    margin: 40px 0;
-
-    box-shadow:
-        inset 0 0 8px rgba(0,0,0,0.25),
-        0 0 12px rgba(0,0,0,0.25);
+    border-bottom-color: #403a31;
 }
 
-.panel-title {
-    margin-top: 0;
-    text-align: center;
-    color: #4a3b2a;
-    font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 1px;
+
+/* =========================================================
+   14. RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .page-wrapper {
+        width: calc(100% - 16px);
+
+        margin: 8px auto;
+
+        padding: 18px;
+    }
+
+    .console-panel {
+        padding: 30px 18px 20px;
+    }
+
+    .console-controls {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 30px 10px;
+    }
+
+    .channel-strip {
+        min-height: 250px;
+    }
+
+    .meter-frame {
+        max-width: 420px;
+    }
+
+    .console-footer {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 12px;
+    }
 }
 
-/* --- Großes EMI REDD Style Panel --- */
-.redd-panel {
-    position: relative;
-    background: #f3e9d2; /* warmes Cream, passend zum VU */
-    border: 4px solid #5a4a3b; /* dunkler Rahmen */
-    border-radius: 10px;
 
-    padding: 40px;
-    margin: 60px 0;
+@media (max-width: 500px) {
 
-    box-shadow:
-        inset 0 0 12px rgba(0,0,0,0.35),
-        0 0 25px rgba(0,0,0,0.25);
+    .brand-plate {
+        padding: 20px 10px;
+    }
 
-    width: 100%;
+    .brand-subtitle {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .console-header h2 {
+        font-size: 22px;
+    }
+
+    .content-panel {
+        padding: 25px 20px;
+    }
+
+    .content-panel p {
+        font-size: 16px;
+    }
+
+    .screw,
+    .panel-screw {
+        width: 19px;
+        height: 19px;
+    }
+
+    .screw::after,
+    .panel-screw::after {
+        width: 10px;
+        height: 2px;
+
+        top: 8px;
+        left: 4px;
+    }
 }
-
-/* --- Titel --- */
-.redd-title {
-    text-align: center;
-    color: #4a3b2a;
-    font-size: 26px;
-    margin-top: 0;
-    letter-spacing: 1px;
-}
-
-/* --- Beschreibung --- */
-.redd-desc {
-    text-align: center;
-    color: #3a2f22;
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-/* --- Rostige Schrauben --- */
-.redd-screw {
-    width: 28px;
-    height: 28px;
-    background: radial-gradient(circle at 30% 30%, #6b4f2a, #3b2a1a 70%);
-    border-radius: 50%;
-    position: absolute;
-
-    box-shadow:
-        inset 0 0 6px rgba(0,0,0,0.6),
-        0 0 4px rgba(0,0,0,0.4);
-
-    /* Rostflecken */
-    filter: drop-shadow(0 0 3px rgba(120,60,20,0.6));
-}
-
-/* --- Großes EMI REDD Style Panel mit Hammerschlag-Grün --- */
-.redd-panel {
-    position: relative;
-
-    width: 900px;
-    margin: 60px auto;
-    padding: 50px;
-
-    background: #3f5f3f; /* Grundfarbe: dunkles Vintage-Grün */
-    border: 6px solid #2a3b2a; /* dunkler Rahmen */
-    border-radius: 12px;
-
-    /* Hammerschlag-Effekt */
-    background-image:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.10) 0%, transparent 60%),
-        radial-gradient(circle at 80% 30%, rgba(255,255,255,0.08) 0%, transparent 60%),
-        radial-gradient(circle at 40% 70%, rgba(255,255,255,0.12) 0%, transparent 60%),
-        radial-gradient(circle at 70% 80%, rgba(255,255,255,0.06) 0%, transparent 60%);
-    background-blend-mode: overlay;
-
-    box-shadow:
-        inset 0 0 14px rgba(0,0,0,0.45),
-        0 0 30px rgba(0,0,0,0.45);
-}
-
-/* Titel */
-.redd-title {
-    text-align: center;
-    color: #e8e8e8;
-    font-size: 26px;
-    letter-spacing: 2px;
-    margin-bottom: 25px;
-}
-
-/* Beschreibung */
-.redd-desc {
-    text-align: center;
-    color: #dcdcdc;
-    font-size: 16px;
-}
-
-/* --- Rostige Schrauben --- */
-.redd-screw {
-    width: 32px;
-    height: 32px;
-    background: radial-gradient(circle at 30% 30%, #7a4f2a, #4a2f1a 70%);
-    border-radius: 50%;
-    position: absolute;
-
-    box-shadow:
-        inset 0 0 6px rgba(0,0,0,0.7),
-        0 0 6px rgba(0,0,0,0.5);
-
-    filter: drop-shadow(0 0 4px rgba(120,60,20,0.7));
-}
-
-/* Rostflecken */
-.redd-screw::after {
-    content: "";
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    width: 20px;
-    height: 20px;
-    background: radial-gradient(circle, rgba(120,60,20,0.8) 0%, rgba(80,40,15,0.9) 70%);
-    border-radius: 50%;
-    opacity: 0.8;
-}
-
-/* Schraubenpositionen */
-.screw-tl { top: 15px; left: 15px; }
-.screw-tr { top: 15px; right: 15px; }
-.screw-bl { bottom: 15px; left: 15px; }
-.screw-br { bottom: 15px; right: 15px; }
-/* --- Schraubenpositionen --- */
-.screw-tl { top: 12px; left: 12px; }
-.screw-tr { top: 12px; right: 12px; }
-.screw-bl { bottom: 12px; left: 12px; }
-.screw-br { bottom: 12px; right: 12px; }
-/* --- Großes EMI REDD Style Panel mit Hammerschlag-Grün --- */
-.redd-panel {
-    position: relative;
-
-    width: 900px;
-    margin: 60px auto;
-    padding: 50px;
-
-    background: #3f5f3f; /* Grundfarbe: dunkles Vintage-Grün */
-    border: 6px solid #2a3b2a; /* dunkler Rahmen */
-    border-radius: 12px;
-
-    /* Hammerschlag-Effekt */
-    background-image:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.10) 0%, transparent 60%),
-        radial-gradient(circle at 80% 30%, rgba(255,255,255,0.08) 0%, transparent 60%),
-        radial-gradient(circle at 40% 70%, rgba(255,255,255,0.12) 0%, transparent 60%),
-        radial-gradient(circle at 70% 80%, rgba(255,255,255,0.06) 0%, transparent 60%);
-    background-blend-mode: overlay;
-
-    box-shadow:
-        inset 0 0 14px rgba(0,0,0,0.45),
-        0 0 30px rgba(0,0,0,0.45);
-}
-
-.redd-title {
-    text-align: center;
-    color: #e8e8e8;
-    font-size: 26px;
-    letter-spacing: 2px;
-    margin-bottom: 25px;
-}
-
-.redd-desc {
-    text-align: center;
-    color: #dcdcdc;
-    font-size: 16px;
-}
-
-/* --- Rostige Schrauben --- */
-.redd-screw {
-    width: 32px;
-    height: 32px;
-    background: radial-gradient(circle at 30% 30%, #7a4f2a, #4a2f1a 70%);
-    border-radius: 50%;
-    position: absolute;
-
-    box-shadow:
-        inset 0 0 6px rgba(0,0,0,0.7),
-        0 0 6px rgba(0,0,0,0.5);
-
-    filter: drop-shadow(0 0 4px rgba(120,60,20,0.7));
-}
-
-.redd-screw::after {
-    content: "";
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    width: 20px;
-    height: 20px;
-    background: radial-gradient(circle, rgba(120,60,20,0.8) 0%, rgba(80,40,15,0.9) 70%);
-    border-radius: 50%;
-    opacity: 0.8;
-}
-
-.screw-tl { top: 15px; left: 15px; }
-.screw-tr { top: 15px; right: 15px; }
-.screw-bl { bottom: 15px; left: 15px; }
-.screw-br { bottom: 15px; right: 15px; }
-.knob {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    position: relative;
-
-    background: radial-gradient(circle at 30% 30%, #2a2a2a, #0e0e0e 70%);
-    box-shadow:
-        inset 0 0 12px rgba(255,255,255,0.15),
-        inset 0 0 6px rgba(0,0,0,0.9),
-        0 0 18px rgba(0,0,0,0.7);
-
-    filter: drop-shadow(0 0 4px rgba(0,0,0,0.6));
-}
-/* --- 50er Style Kegelknopf in gedecktem Rot --- */
-.red-knob {
-    width: 120px;
-    height: 120px;
-    position: relative;
-
-    /* Kegel-Form: oben heller, unten dunkler */
-    background: radial-gradient(circle at 50% 30%, #7a1f1f 0%, #4a0f0f 70%);
-    border-radius: 50%;
-
-    /* Scharfe Konturen */
-    box-shadow:
-        inset 0 0 4px rgba(255,255,255,0.2),
-        inset 0 -8px 12px rgba(0,0,0,0.7),
-        0 0 10px rgba(0,0,0,0.6);
-
-    /* leichte Kantenbetonung */
-    border: 3px solid #2a0a0a;
-}
-
-/* Pointer-Markierung bleibt gleich */
-.knob-pointer {
-    position: absolute;
-    width: 6px;
-    height: 40px;
-    background: #f2f2f2;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 3px;
-    box-shadow:
-        0 0 4px rgba(255,255,255,0.6),
-        inset 0 0 2px rgba(0,0,0,0.7);
-}
-
-    /* Kegel-Form: oben heller, unten dunkler */
-    background: radial-gradient(circle at 50% 30%, #7a1f1f 0%, #4a0f0f 70%);
-    border-radius: 50%;
-
-    /* Scharfe Konturen */
-    box-shadow:
-        inset 0 0 4px rgba(255,255,255,0.2),
-        inset 0 -8px 12px rgba(0,0,0,0.7),
-        0 0 10px rgba(0,0,0,0.6);
-
-    border: 3px solid #2a0a0a;
-}
-/* --- Roter 50er Kegelknopf --- */
-.red-knob {
-    width: 120px;
-    height: 120px;
-    position: relative;
-
-    /* Kegel-Form */
-    background: radial-gradient(circle at 50% 20%, #8a1f1f 0%, #4a0f0f 70%);
-    border-radius: 0; /* WICHTIG: Rundung abschalten */
-
-    /* Kegel-Konturen */
-    clip-path: polygon(
-        50% 0%,
-        70% 20%,
-        100% 100%,
-        0% 100%,
-        30% 20%
-    );
-
-    box-shadow:
-        inset 0 0 6px rgba(255,255,255,0.2),
-        inset 0 -10px 14px rgba(0,0,0,0.7),
-        0 0 12px rgba(0,0,0,0.6);
-
-    border: 3px solid #2a0a0a;
-}
-
-/* --- Chickenhead-Knopf --- */
-.chickenhead-knob {
-    width: 120px;
-    height: 120px;
-    position: relative;
-    margin: 0 auto;
-
-    /* Tropfenform */
-    clip-path: polygon(
-        50% 0%,
-        65% 20%,
-        80% 50%,
-        65% 80%,
-        50% 100%,
-        35% 80%,
-        20% 50%,
-        35% 20%
-    );
-
-    background: radial-gradient(circle at 50% 30%, #7a1f1f 0%, #3a0a0a 70%);
-    border: 3px solid #2a0a0a;
-
-    box-shadow:
-        inset 0 0 6px rgba(255,255,255,0.2),
-        inset 0 -10px 14px rgba(0,0,0,0.7),
-        0 0 12px rgba(0,0,0,0.6);
-}
-
-/* Lichtreflex */
-.chickenhead-knob::before {
-    content: "";
-    position: absolute;
-    top: 18px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 25px;
-    background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%);
-    border-radius: 50%;
-    opacity: 0.7;
-}
-
-/* Pointer-Nase */
-.chickenhead-pointer {
-    position: absolute;
-    top: 4px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10px;
-    height: 35px;
-    background: #f2f2f2;
-    border-radius: 3px;
-    box-shadow:
-        0 0 4px rgba(255,255,255,0.6),
-        inset 0 0 2px rgba(0,0,0,0.7);
-}
-.knob-base {
-    width: 140px;
-    height: 140px;
-    background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000 80%);
-    border-radius: 50%;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-    box-shadow:
-        inset 0 0 12px rgba(255,255,255,0.1),
-        0 0 12px rgba(0,0,0,0.7);
-}
-.chickenhead-knob {
-    width: 120px;
-    height: 120px;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    /* Organische Tropfenform */
-    clip-path: path("M60 0 C85 10 110 40 110 70 C110 100 85 120 60 120 C35 120 10 100 10 70 C10 40 35 10 60 0 Z");
-
-    background: radial-gradient(circle at 50% 30%, #7a1f1f 0%, #3a0a0a 70%);
-    border: 3px solid #2a0a0a;
-
-    box-shadow:
-        inset 0 0 6px rgba(255,255,255,0.2),
-        inset 0 -10px 14px rgba(0,0,0,0.7),
-        0 0 12px rgba(0,0,0,0.6);
-
-    z-index: 2;
-}
-.chickenhead-knob::before {
-    content: "";
-    position: absolute;
-    top: 18px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 25px;
-    background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%);
-    border-radius: 50%;
-    opacity: 0.7;
-}
-.chickenhead-pointer {
-    position: absolute;
-    top: 4px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10px;
-    height: 35px;
-    background: #f2f2f2;
-    border-radius: 3px;
-    box-shadow:
-        0 0 4px rgba(255,255,255,0.6),
-        inset 0 0 2px rgba(0,0,0,0.7);
-}
-.knob-scale {
-    width: 160px;
-    height: 80px;
-    margin: 150px auto 0 auto;
-    border-top: 4px solid #e8e8e8;
-    border-radius: 160px 160px 0 0;
-    position: relative;
-    z-index: 0;
-}
-
-.knob-scale::after {
-    content: "";
-    position: absolute;
-    top: -4px;
-    left: 50%;
-    width: 4px;
-    height: 12px;
-    background: #e8e8e8;
-    transform: translateX(-50%);
-    box-shadow:
-        -40px 0 0 #e8e8e8,
-        -20px 0 0 #e8e8e8,
-        20px 0 0 #e8e8e8,
-        40px 0 0 #e8e8e8;
-}
-.knob-base {
-    width: 140px;
-    height: 140px;
-    background: radial-gradient(circle, #1a1a1a 0%, #000 80%);
-    border-radius: 50%;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-.chickenhead-knob {
-    width: 120px;
-    height: 120px;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-
-    clip-path: path("M60 0 C85 10 110 40 110 70 C110 100 85 120 60 120 C35 120 10 100 10 70 C10 40 35 10 60 0 Z");
-
-    background: radial-gradient(circle at 50% 30%, #7a1f1f 0%, #3a0a0a 70%);
-    border: 3px solid #2a0a0a;
-    box-shadow:
-        inset 0 0 6px rgba(255,255,255,0.2),
-        inset 0 -10px 14px rgba(0,0,0,0.7),
-        0 0 12px rgba(0,0,0,0.6);
-}
-.chickenhead-knob {
-    width: 120px;
-    height: 120px;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-
-    clip-path: path("M60 0 C85 10 110 40 110 70 C110 100 85 120 60 120 C35 120 10 100 10 70 C10 40 35 10 60 0 Z");
-
-    background: radial-gradient(circle at 50% 30%, #7a1f1f 0%, #3a0a0a 70%);
-    border: 3px solid #2a0a0a;
-    box-shadow:
-        inset 0 0 6px rgba(255,255,255,0.2),
-        inset 0 -10px 14px rgba(0,0,0,0.7),
-        0 0 12px rgba(0,0,0,0.6);
-}
-.chickenhead-knob::before {
-    content: "";
-    position: absolute;
-    top: 18px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 25px;
-    background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%);
-    border-radius: 50%;
-    opacity: 0.7;
-}
-.chickenhead-pointer {
-    position: absolute;
-    top: 4px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10px;
-    height: 35px;
-    background: #f2f2f2;
-    border-radius: 3px;
-    box-shadow:
-        0 0 4px rgba(255,255,255,0.6),
-        inset 0 0 2px rgba(0,0,0,0.7);
-}
-.knob-scale {
-    width: 160px;
-    height: 160px;
-    position: relative;
-    margin: 0 auto;
-    margin-top: 150px;
-}
-.scale-tick {
-    position: absolute;
-    width: 4px;
-    height: 20px;
-    background: #000;
-    left: 50%;
-    top: 0;
-    transform-origin: bottom center;
-}
-.scale-tick:nth-child(1) { transform: translateX(-50%) rotate(-60deg); }
-.scale-tick:nth-child(2) { transform: translateX(-50%) rotate(-30deg); }
-.scale-tick:nth-child(3) { transform: translateX(-50%) rotate(0deg); }
-.scale-tick:nth-child(4) { transform: translateX(-50%) rotate(30deg); }
-.scale-tick:nth-child(5) { transform: translateX(-50%) rotate(60deg); }
